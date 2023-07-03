@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script src="https://unpkg.com/peerjs@1.4.7/dist/peerjs.min.js"></script>
+    <script>
+      var peer = new Peer({
+        host: '34.221.178.214', 
+        port: 9000,
+        path: '/'
+      });
+
+      peer.on('open', function (id) {
+        console.log('My peer ID is: ' + id);
+        document.getElementById('myid').innerText = 'My ID: ' + id;
+      });
+
+      document.getElementById('connect').addEventListener('click', function () {
+        var conn = peer.connect(document.getElementById('peerid').value);
+
+        conn.on('open', function () {
+          console.log('Connected to peer');
+
+          conn.on('data', function (data) {
+            console.log('Received', data);
+          });
+
+          document.getElementById('send').addEventListener('click', function () {
+            conn.send(document.getElementById('message').value);
+          });
+        });
+      });
+    </script>
+
+    <p id="myid"></p>
+    <input type="text" id="peerid" placeholder="Peer ID to connect" />
+    <button id="connect">Connect</button><br />
+
+    <input type="text" id="message" placeholder="Message" />
+    <button id="send">Send</button>
+  </body>
+</html>
