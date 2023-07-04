@@ -1,56 +1,81 @@
 <!DOCTYPE html>
 <html>
-  <body>
+<body>
     <script src="https://unpkg.com/peerjs@1.4.7/dist/peerjs.min.js"></script>
-        <script>
-          var peer = new Peer({
-            host: '34.221.178.214',
-            port: 9000,
-            path: '/'
+    <script>
+var peer = new Peer({
+  host: '34.221.178.214',
+  port: 9000,
+  path: '/'
+});
+
+var connections = [];
+
+peer.on('open', function (id) {
+  console.log('My peer ID is: ' + id);
+  document.getElementById('myid').innerText = 'My ID: ' + id;
+
+  // Retrieve the list of connected peers from the server
+  var request = new XMLHttpRequest();
+  request.open('GET', 'http://34.221.178.214:3000/peers', true);
+  request.onreadystatechange = function() {
+    if (request.readyState === 4 && request.status === 200) {
+      var peers = JSON.parse(request.responseText);
+      console.log('Connected peers:', peers);
+
+      // Connect to each peer
+      peers.forEach(function(peerId) {
+        if (peerId !== id) {
+          var conn = peer.connect(peerId);
+          connections.push(conn);
+          conn.on('open', function() {
+            console.log('Connected to peer:', peerId);
+
+            // Send a pre-defined message
+            var messageToSend = 'Hello, Peer!';
+            conn.send(messageToSend);
+
+            conn.on('data', function(data) {
+              console.log('Received', data);
+              const messages = document.getElementById('messages');
+              const message = document.createElement('li');
+              message.textContent = 'Received Message: ' + data;
+              messages.appendChild(message);
+            });
           });
-    
-          peer.on('open', function (id) {
-            console.log('My peer ID is: ' + id);
-            document.getElementById('myid').innerText = 'My ID: ' + id;
-    
-            // Retrieve the list of connected peers from the server
-            var request = new XMLHttpRequest();
-            request.open('GET', 'http://34.221.178.214:3000/peers', true);
-            request.onreadystatechange = function() {
-              if (request.readyState === 4 && request.status === 200) {
-                var peers = JSON.parse(request.responseText);
-                console.log('Connected peers:', peers);
-    
-                // Connect to each peer
-                peers.forEach(function(peerId) {
-                  if (peerId !== id) {
-                    var conn = peer.connect(peerId);
-                    conn.on('open', function() {
-                      console.log('Connected to peer:', peerId);
-    
-                      // Send a pre-defined message
-                      var messageToSend = 'Hello, Peer!';
-                      conn.send(messageToSend);
-    
-                      conn.on('data', function(data) {
-                        console.log('Received', data);
-                        document.getElementById('receivedMessage').innerText = 'Received Message: ' + data;
-                      });
-                    });
-                  }
-                });
-              }
-            };
-            request.send();
-          });
-    
-          peer.on('error', function(err) {
-            console.error('PeerJS Error:', err);
-          });
-        </script>
-    
-        <p id="myid"></p>
-        <p id="receivedMessage"></p>
-      </body>
-    </html>
-    
+        }
+      });
+    }
+  };
+  request.send();
+});
+
+document.getElementById('sendButton').addEventListener('click', function() {
+  var message = document.getElementById('messageInput').value;
+  connections.forEach(function(conn) {
+    conn.send(message);
+  });
+});
+
+peer.on('error', function(err) {
+  console.error('PeerJS Error:', err);
+});
+
+      // (inside the conn.on('open') event handler)
+      conn.on('data', function(data) {
+        console.log('Received', data);
+        const messages = document.getElementById('messages');
+        const message = document.createElement('li');
+        message.textContent = 'Received Message: ' + data;
+        messages.appendChild(message);
+      });
+
+    </script>
+
+    <p id="myid"></p>
+    <ul id="messages"></ul>
+
+    <input type="text" id="messageInput">
+    <button id="sendButton">Send</button>
+</body>
+</html>
