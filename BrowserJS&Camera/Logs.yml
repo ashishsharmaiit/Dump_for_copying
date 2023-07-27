@@ -1,0 +1,38 @@
+Before Video Data Track Added Logs
+
+Connected to server
+FreshTry.js:29 offer sent {"type":"offer","offer":{"type":"offer","sdp":"v=0\r\no=- 9213363031549013289 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0\r\na=extmap-allow-mixed\r\na=msid-semantic: WMS\r\nm=application 9 UDP/DTLS/SCTP webrtc-datachannel\r\nc=IN IP4 0.0.0.0\r\na=ice-ufrag:uCw6\r\na=ice-pwd:O0giOa28rAxfJzSld9oIvo8A\r\na=ice-options:trickle\r\na=fingerprint:sha-256 85:4C:04:BE:90:0A:B7:59:71:EC:29:48:C6:62:F2:BB:9E:8E:DC:A1:10:FD:47:E7:AD:7D:28:C6:E9:7D:15:95\r\na=setup:actpass\r\na=mid:0\r\na=sctp-port:5000\r\na=max-message-size:262144\r\n"}}
+FreshTry.js:43 candidate generated RTCIceCandidate {candidate: 'candidate:3911829310 1 udp 2113937151 db28210c-ed4…typ host generation 0 ufrag uCw6 network-cost 999', sdpMid: '0', sdpMLineIndex: 0, foundation: '3911829310', component: 'rtp', …}
+FreshTry.js:43 candidate generated RTCIceCandidate {candidate: 'candidate:3528177751 1 udp 2113939711 db45005a-519…typ host generation 0 ufrag uCw6 network-cost 999', sdpMid: '0', sdpMLineIndex: 0, foundation: '3528177751', component: 'rtp', …}
+FreshTry.js:49 Message from server: {"type":"acceptance"}
+2FreshTry.js:49 Message from server: {"type":"candidate acceptance"}
+FreshTry.js:43 candidate generated RTCIceCandidate {candidate: 'candidate:574540790 1 udp 1677732095 2601:600:8780… rport 0 generation 0 ufrag uCw6 network-cost 999', sdpMid: '0', sdpMLineIndex: 0, foundation: '574540790', component: 'rtp', …}
+FreshTry.js:43 candidate generated RTCIceCandidate {candidate: 'candidate:2095057350 1 udp 1677729535 71.227.176.2… rport 0 generation 0 ufrag uCw6 network-cost 999', sdpMid: '0', sdpMLineIndex: 0, foundation: '2095057350', component: 'rtp', …}
+FreshTry.js:49 Message from server: {"type":"candidate acceptance"}
+FreshTry.js:49 Message from server: {"type":"answer","answer":{"type":"answer","sdp":"v=0\r\no=- 3899331116 3899331116 IN IP4 0.0.0.0\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0\r\na=msid-semantic:WMS *\r\nm=application 43293 UDP/DTLS/SCTP webrtc-datachannel\r\nc=IN IP4 10.0.0.130\r\na=mid:0\r\na=sctp-port:5000\r\na=max-message-size:65536\r\na=candidate:0b971144e0cb634b12dbbeab1191f708 1 udp 2130706431 10.0.0.130 43293 typ host\r\na=candidate:f947dae616d84cc6e494f419bd05e900 1 udp 2130706431 2601:600:8780:f630::fffa 33278 typ host\r\na=candidate:53af10994407ddcab6dc6c100ce1aba3 1 udp 2130706431 2601:600:8780:f630:9c8b:fd40:d81f:702a 40095 typ host\r\na=candidate:a38e4d143dcb775594f69a5df4f7e873 1 udp 2130706431 2601:600:8780:f630:2e3b:b8a6:fe9b:b28c 35490 typ host\r\na=candidate:c1e88d6b8b134dd37446c4950fd3a9f5 1 udp 1694498815 71.227.176.27 43293 typ srflx raddr 10.0.0.130 rport 43293\r\na=end-of-candidates\r\na=ice-ufrag:Q4cB\r\na=ice-pwd:9eBlFq5HH1NVGyAa8gwSHY\r\na=fingerprint:sha-256 6F:FF:38:18:D1:4A:5F:35:86:B9:08:90:AA:5B:17:26:5E:42:00:7B:55:6D:38:2B:44:F2:1E:3F:67:AA:14:DB\r\na=setup:active\r\n"}}
+FreshTry.js:49 Message from server: {"type":"candidate acceptance"}
+FreshTry.js:126 ICE connection state change:  checking
+FreshTry.js:126 ICE connection state change:  connected
+FreshTry.js:128 WebRTC connection established with the exchanged SDP offer and ICE candidates
+FreshTry.js:73 Data channel opened
+FreshTry.js:82 Data channel received: RTCDataChannel {label: 'dataChannel', ordered: true, maxPacketLifeTime: null, maxRetransmits: null, protocol: '', …}
+FreshTry.js:86 Data channel opened
+FreshTry.js:88 Hello World Sent
+FreshTry.js:119 Received message: Hello Back from ROS Python!
+
+
+
+[INFO] [1690342312.448691]: WebSocket client node initialized
+WebSocket connected
+Received message: b'{"type":"offer","offer":{"type":"offer","sdp":"v=0\\r\\no=- 9213363031549013289 2 IN IP4 127.0.0.1\\r\\ns=-\\r\\nt=0 0\\r\\na=group:BUNDLE 0\\r\\na=extmap-allow-mixed\\r\\na=msid-semantic: WMS\\r\\nm=application 9 UDP/DTLS/SCTP webrtc-datachannel\\r\\nc=IN IP4 0.0.0.0\\r\\na=ice-ufrag:uCw6\\r\\na=ice-pwd:O0giOa28rAxfJzSld9oIvo8A\\r\\na=ice-options:trickle\\r\\na=fingerprint:sha-256 85:4C:04:BE:90:0A:B7:59:71:EC:29:48:C6:62:F2:BB:9E:8E:DC:A1:10:FD:47:E7:AD:7D:28:C6:E9:7D:15:95\\r\\na=setup:actpass\\r\\na=mid:0\\r\\na=sctp-port:5000\\r\\na=max-message-size:262144\\r\\n"}}'
+sdp answer I am sending is {'type': 'answer', 'answer': {'type': 'answer', 'sdp': 'v=0\r\no=- 3899331116 3899331116 IN IP4 0.0.0.0\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0\r\na=msid-semantic:WMS *\r\nm=application 43293 UDP/DTLS/SCTP webrtc-datachannel\r\nc=IN IP4 10.0.0.130\r\na=mid:0\r\na=sctp-port:5000\r\na=max-message-size:65536\r\na=candidate:0b971144e0cb634b12dbbeab1191f708 1 udp 2130706431 10.0.0.130 43293 typ host\r\na=candidate:f947dae616d84cc6e494f419bd05e900 1 udp 2130706431 2601:600:8780:f630::fffa 33278 typ host\r\na=candidate:53af10994407ddcab6dc6c100ce1aba3 1 udp 2130706431 2601:600:8780:f630:9c8b:fd40:d81f:702a 40095 typ host\r\na=candidate:a38e4d143dcb775594f69a5df4f7e873 1 udp 2130706431 2601:600:8780:f630:2e3b:b8a6:fe9b:b28c 35490 typ host\r\na=candidate:c1e88d6b8b134dd37446c4950fd3a9f5 1 udp 1694498815 71.227.176.27 43293 typ srflx raddr 10.0.0.130 rport 43293\r\na=end-of-candidates\r\na=ice-ufrag:Q4cB\r\na=ice-pwd:9eBlFq5HH1NVGyAa8gwSHY\r\na=fingerprint:sha-256 6F:FF:38:18:D1:4A:5F:35:86:B9:08:90:AA:5B:17:26:5E:42:00:7B:55:6D:38:2B:44:F2:1E:3F:67:AA:14:DB\r\na=setup:active\r\n'}}
+Received message: {"candidate":"candidate:3911829310 1 udp 2113937151 db28210c-ed44-4580-8f72-a27b8d05097a.local 38043 typ host generation 0 ufrag uCw6 network-cost 999","sdpMid":"0","sdpMLineIndex":0,"usernameFragment":"uCw6"}
+Received message: {"candidate":"candidate:3528177751 1 udp 2113939711 db45005a-519d-4687-9d0e-bbcf3e458a05.local 38275 typ host generation 0 ufrag uCw6 network-cost 999","sdpMid":"0","sdpMLineIndex":0,"usernameFragment":"uCw6"}
+Received message: {"candidate":"candidate:574540790 1 udp 1677732095 2601:600:8780:f630:9c8b:fd40:d81f:702a 38275 typ srflx raddr :: rport 0 generation 0 ufrag uCw6 network-cost 999","sdpMid":"0","sdpMLineIndex":0,"usernameFragment":"uCw6"}
+Received message: {"type":"answer acceptance"}
+Received message: {"candidate":"candidate:2095057350 1 udp 1677729535 71.227.176.27 38043 typ srflx raddr 0.0.0.0 rport 0 generation 0 ufrag uCw6 network-cost 999","sdpMid":"0","sdpMLineIndex":0,"usernameFragment":"uCw6"}
+Received message on data channel: Hello, World!
+
+
+
+-------------

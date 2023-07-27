@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gamepad and S3 Video</title>
+  <style>
+    /* You can adjust these styles to fit your application's needs */
+    video {
+        width: 640px;
+        height: 480px;
+        margin: 10px;
+    }
+</style>
+</head>
+<body>
+  <h1>Gamepad and S3 Video</h1>
+
+  <h2>Local Stream</h2>
+  <video id="FirstVideo" autoplay playsinline controls muted></video>
+  <button id="FirstVideoPlay">Play</button>
+
+  <h2>Remote Stream</h2>
+  <video id="SecondVideo" autoplay playsinline controls muted></video>
+  <button id="SecondVideoPlay">Play</button>
+
+  <script src="https://sdk.amazonaws.com/js/aws-sdk-2.814.0.min.js"></script>
+  <script src="JSandS3Video.js"></script>
+</body>
+</html>
